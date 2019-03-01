@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <button class="puzzleSolved">
+            dotknij i przejdź do nowego wymiaru
+        </button>
+        <div class="alien">
+            <!-- <img src="alien.jpeg" alt=""> -->
+        </div>
+        <div class="parameters">
+            <h2>PARAMETERs</h2>
+            <div class="parameter temperatura">
+                <h3>Temperature(<sup>o</sup>C)</h3>
+                <div class="suwak temperatureSlider">
+                    <span id="temperatureDisplay">-30</span>
+                    <input id="temperatureSlider" class="range" type="range" value="-30" min="-30" max="30" step="1">
+                </div>
+                <div class="box-minmax">
+                    <span>-30<sup>o</sup>C</span>
+                    <span>0<sup>o</sup>C</span>
+                    <span>30<sup>o</sup>C</span>
+                </div>
+
+            </div>
+            <div class="parameter tlen">
+                <h3>%O<sub>2</sub></h3>
+                <div class="suwak oxygeneSlider">
+
+                    <span id="oxygeneDisplay">0</span>
+                    <input id="oxygeneSlider" class="range" type="range" value="0" min="0" max="25" step="1">
+                </div>
+                <div class="box-minmax">
+                    <span>0%</span>
+                    <span>5%</span>
+                    <span>10%</span>
+                    <span>15%</span>
+                    <span>20%</span>
+                    <span>25%</span>
+                </div>
+            </div>
+            <div class="parameter cisnienie">
+                <h3>
+                    Pressure(hPa)
+                </h3>
+                <div class="suwak pressureSlider">
+
+                    <span id="pressureDisplay">900</span>
+                    <input id="pressureSlider" class=" range" type="range" value="0" min="900" max="1500" step="6">
+                </div>
+                <div class="box-minmax">
+                    <span>900hPa</span>
+                    <span>1200hPa</span>
+                    <span>1500hPa</span>
+
+                </div>
+            </div>
+            <div class="parameter grawitacja">
+                <h3>
+                    Gravity(G)
+                </h3>
+                <div class="suwak gravitySlider">
+
+                    <span id="gravityDisplay">0.5</span>
+                    <input id="gravitySlider" class=" range" type="range" value="0.5" min="0.5" max="1.5" step="0.1">
+                </div>
+                <div class="box-minmax">
+                    <span>0,5G</span>
+                    <span>0,6G</span>
+                    <span>0,7G</span>
+                    <span>0,8G</span>
+                    <span>0,9G</span>
+                    <span>1,0G</span>
+                    <span>1,1G</span>
+                    <span>1,2G</span>
+                    <span>1,3G</span>
+                    <span>1,4G</span>
+                    <span>1,5G</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="zagadka.js">
+    </script>
+</body>
+
+</html>
