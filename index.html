@@ -22,8 +22,9 @@
             <div class="parameter temperatura">
                 <h3>Temperature(<sup>o</sup>C)</h3>
                 <div class="suwak temperatureSlider">
-                    <span id="temperatureDisplay">-30</span>
-                    <input id="temperatureSlider" class="range" type="range" value="-30" min="-30" max="30" step="1">
+                    <span id="temperatureDisplay" class="temperature">-30</span>
+                    <input id="temperatureSlider" class="range temperature" type="range" value="-30" min="-30" max="30"
+                        step="1" data-correct="9">
                 </div>
                 <div class="box-minmax">
                     <span>-30<sup>o</sup>C</span>
@@ -37,7 +38,8 @@
                 <div class="suwak oxygeneSlider">
 
                     <span id="oxygeneDisplay">0</span>
-                    <input id="oxygeneSlider" class="range" type="range" value="0" min="0" max="25" step="1">
+                    <input id="oxygeneSlider" class="range" type="range" value="0" min="0" max="25" step="1"
+                        data-correct="24">
                 </div>
                 <div class="box-minmax">
                     <span>0%</span>
@@ -55,7 +57,8 @@
                 <div class="suwak pressureSlider">
 
                     <span id="pressureDisplay">900</span>
-                    <input id="pressureSlider" class=" range" type="range" value="0" min="900" max="1500" step="6">
+                    <input id="pressureSlider" class=" range" type="range" value="0" min="900" max="1500" step="6"
+                        data-correct="1002">
                 </div>
                 <div class="box-minmax">
                     <span>900hPa</span>
@@ -71,7 +74,8 @@
                 <div class="suwak gravitySlider">
 
                     <span id="gravityDisplay">0.5</span>
-                    <input id="gravitySlider" class=" range" type="range" value="0.5" min="0.5" max="1.5" step="0.1">
+                    <input id="gravitySlider" class=" range" type="range" value="0.5" min="0.5" max="1.5" step="0.1"
+                        data-correct="0.8">
                 </div>
                 <div class="box-minmax">
                     <span>0,5G</span>
