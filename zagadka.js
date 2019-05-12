@@ -31,8 +31,12 @@ const puzzleTrigger = (element) => {
 
     if (result === true) {
         const button = document.querySelector('button');
+        const heart = document.querySelector('.heart');
         console.log("zadanie wykonane");
-        button.style.display = "block";
+        // alert("Zadanie wykonane");
+        // button.style.display = "block";
+        heart.classList.add('solved');
+
     }
 }
 

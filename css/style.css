@@ -1,0 +1,400 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@-webkit-keyframes pulse {
+  10% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  60% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  90% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@keyframes pulse {
+  10% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  60% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  90% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+body {
+  height: 100vh;
+  font-family: sans-serif;
+  color: white;
+  opacity: 0.95;
+  overflow: hidden;
+}
+
+body:after {
+  content: "";
+  background: url(../images/tlo.jpg);
+  opacity: 0.8;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+body > .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+}
+
+body > .wrapper > .puzzleSolved {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  text-transform: uppercase;
+  z-index: 1;
+  display: none;
+  color: white;
+  font-size: 80px;
+  background-image: -webkit-radial-gradient(yellow 0%, orange 25%, red 75%, green 100%);
+  background-image: -o-radial-gradient(yellow 0%, orange 25%, red 75%, green 100%);
+  background-image: radial-gradient(yellow 0%, orange 25%, red 75%, green 100%);
+}
+
+body > .wrapper > .puzzleSolved:hover {
+  cursor: pointer;
+}
+
+body > .wrapper > .alien {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  background-image: url(../images/ufol.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+body > .wrapper > .alien img {
+  height: 100%;
+}
+
+body > .wrapper > .alien .heart {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  z-index: 5;
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  -webkit-filter: grayscale(90%);
+          filter: grayscale(90%);
+}
+
+body > .wrapper > .alien .heart.solved {
+  opacity: 1;
+  -webkit-filter: grayscale(10%);
+          filter: grayscale(10%);
+  -webkit-animation: pulse 0.8s infinite;
+          animation: pulse 0.8s infinite;
+}
+
+body > .wrapper > .parameters {
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  position: relative;
+}
+
+body > .wrapper > .parameters > h2 {
+  font-size: 50px;
+  -ms-flex-preferred-size: 100px;
+      flex-basis: 100px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 100px;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+}
+
+body > .wrapper > .parameters .parameter {
+  -ms-flex-preferred-size: 18%;
+      flex-basis: 18%;
+  border: 2px solid white;
+  border-radius: 15px;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body > .wrapper > .parameters .parameter > h3 {
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+body > .wrapper > .parameters .parameter > .suwak {
+  width: 90%;
+}
+
+body > .wrapper > .parameters .parameter > .suwak span {
+  display: block;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: white;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 40px;
+  color: black;
+}
+
+body > .wrapper > .parameters .parameter > .suwak > input {
+  width: 100%;
+  -webkit-appearance: none;
+}
+
+body > .wrapper > .parameters .parameter > .suwak > input:focus {
+  outline: none;
+}
+
+body > .wrapper > .parameters .parameter > .suwak > input::-webkit-slider-thumb {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-top: -20px;
+  -webkit-appearance: none;
+  background-color: white;
+  border: 0px solid #ffffff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+body > .wrapper > .parameters .parameter > .suwak > input::-webkit-slider-thumb:active, body > .wrapper > .parameters .parameter > .suwak > input::-webkit-slider-thumb:hover {
+  background-color: red;
+}
+
+body > .wrapper > .parameters .parameter > .suwak > input::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: #ffffff;
+  border-radius: 0px;
+  border: 0px solid #010101;
+}
+
+body > .wrapper > .parameters .box-minmax {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+}
+
+@media (max-width: 1024px) {
+  body {
+    height: 100vh;
+    font-family: sans-serif;
+    color: white;
+    background: -webkit-gradient(linear, left top, left bottom, from(#DB302A), to(#62186B)) no-repeat;
+    background: -webkit-linear-gradient(top, #DB302A 0%, #62186B 100%) no-repeat;
+    background: -o-linear-gradient(top, #DB302A 0%, #62186B 100%) no-repeat;
+    background: linear-gradient(180deg, #DB302A 0%, #62186B 100%) no-repeat;
+    overflow: hidden;
+  }
+  body > .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+  }
+  body > .wrapper > .puzzleSolved {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    font-size: 40px;
+    background-image: -webkit-radial-gradient(yellow 0%, orange 25%, red 75%, green 100%);
+    background-image: -o-radial-gradient(yellow 0%, orange 25%, red 75%, green 100%);
+    background-image: radial-gradient(yellow 0%, orange 25%, red 75%, green 100%);
+  }
+  body > .wrapper > .alien {
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+    -webkit-animation: shakeX 0.2s infinite, shakeY 0.2s infinite, scaleabc 10s infinite;
+            animation: shakeX 0.2s infinite, shakeY 0.2s infinite, scaleabc 10s infinite;
+  }
+  body > .wrapper > .alien img {
+    height: 100%;
+  }
+  body > .wrapper > .parameters {
+    -ms-flex-preferred-size: 60%;
+        flex-basis: 60%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 5px;
+  }
+  body > .wrapper > .parameters > h2 {
+    font-size: 20px;
+    -ms-flex-preferred-size: 40px;
+        flex-basis: 40px;
+    line-height: 40px;
+  }
+  body > .wrapper > .parameters .parameter {
+    -ms-flex-preferred-size: 18%;
+        flex-basis: 18%;
+    border: 1px solid white;
+    border-radius: 15px;
+    width: 90%;
+  }
+  body > .wrapper > .parameters .parameter > h3 {
+    -ms-flex-preferred-size: 15%;
+        flex-basis: 15%;
+    text-align: center;
+    margin-top: 5px;
+  }
+  body > .wrapper > .parameters .parameter > .suwak {
+    width: 90%;
+  }
+  body > .wrapper > .parameters .parameter > .suwak span {
+    height: 20px;
+    width: 20px;
+    margin-bottom: 10px;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  body > .wrapper > .parameters .parameter > .suwak > input {
+    width: 100%;
+    -webkit-appearance: none;
+  }
+  body > .wrapper > .parameters .parameter > .suwak > input:focus {
+    outline: none;
+  }
+  body > .wrapper > .parameters .parameter > .suwak > input::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-top: -10px;
+    -webkit-appearance: none;
+    background-color: white;
+    border: 0px solid #ffffff;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+    position: relative;
+  }
+  body > .wrapper > .parameters .parameter > .suwak > input::-webkit-slider-thumb:active, body > .wrapper > .parameters .parameter > .suwak > input::-webkit-slider-thumb:hover {
+    background-color: red;
+  }
+  body > .wrapper > .parameters .parameter > .suwak > input::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    background: #ffffff;
+    border-radius: 0px;
+    border: 0px solid #010101;
+  }
+  body > .wrapper > .parameters .box-minmax {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 90%;
+  }
+  body > .wrapper > .parameters .box-minmax span {
+    font-size: 12px;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 800px) {
+  body > .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100vh;
+  }
+  body > .wrapper > .alien {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
+  body > .wrapper > .parameters {
+    -ms-flex-preferred-size: 70%;
+        flex-basis: 70%;
+  }
+  body > .wrapper > .parameters .parameter > h3 {
+    font-size: 15px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
